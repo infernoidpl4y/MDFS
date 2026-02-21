@@ -18,24 +18,15 @@
       }
       return "OK";
     }
-    function MDFS_listLoad($op, $file){
-      if($op!=0){
-        $flist=fopen($file, "r");
-        $fw=fread($flist,1024);
-        while(false!==$line=fgets($fw)){
-          $fcnt[]=$line;
-        }
-        fclose($flist);
-        return $fcnt;
-      }
+    function MDFS_listLoad($file){
       $flist=fopen($file, "r");
-      $fw=fread($flist,1024);
-      while(false!==$line=fgets($fw)){
-        $fcnt[]=$line;
+      if(!$flist) return [];
+      $fcnt=[];
+      while($line=fgets($flist)!==false){
+        $fcnt[]=trim($line);
       }
       fclose($flist);
       return $fcnt;
     }
   }
-  #Necesito borrar archivos tmp. Terminar lode la lista
 ?>
