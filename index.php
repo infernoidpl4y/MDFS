@@ -2,6 +2,10 @@
   #Example how use MDFS
   include("MDFS/recv.php");
   $MDFS= new MDFS_Scanner();
+  #Update Example
+  if(date("w")==1){
+    $MDFS->MDFS_UpdateLists("MDFS/BCL");
+  }
   $ip_c=$_SERVER["REMOTE_ADDR"];
   $a=["1",2,"3","<script>"];
   if($MDFS->MDFS_tmpScanner($MDFS->MDFS_listLoad("MDFS/BCL/MDFS_basic_list.txt"))=="CI"){

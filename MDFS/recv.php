@@ -1,6 +1,6 @@
 <?php
-  class MDFS_Scanner{
-    function MDFS_tmpScanner($list){
+  class MDFS{
+    function MDFS_Scanner($list){
       if($_GET){
         $CNT=($_GET);
         foreach($CNT as $c){
@@ -27,6 +27,19 @@
       }
       fclose($flist);
       return $fcnt;
+    }
+    function MDFS_UpdateLists($path){
+      $lists=[
+        "basic"=>"https://raw.githubusercontent.com/infernoidpl4y/MDFS/refs/heads/main/MDFS/BCL/MDFS_basic_list.txt",
+        "advanced"=>"https://raw.githubusercontent.com/infernoidpl4y/MDFS/refs/heads/main/MDFS/BCL/MDFS_advanced_list.txt"
+      ];
+
+      foreach($lists as $name=>$url){
+        $content=$file_get_contents($url);
+        if($content){
+          file_put_contents("$path/MDFS_{$name}_list.txt", $content);
+        }
+      }
     }
   }
 ?>
