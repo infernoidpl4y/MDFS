@@ -10,20 +10,29 @@
     fwrite($fTMP, $postCNT);
     fclose($fTMP);
   }
-  function MDFS_tmpScanner($list){
-    $tmpfile=fopen("MDFS/TMP/tmp.json", 'r');
-    $cntTF=fread($tmpfile, 1024);
-    fclose($tmpfile);
-    $CNT=json_decode($cntTF);
-    foreach($CNT as $c){
-      foreach($list as $l){
-        if(str_contains($c, $l)) return "CI";
+  class MDFS_Scanner{
+    function MDFS_tmpScanner($list){
+      $tmpfile=fopen("MDFS/TMP/tmp.json", 'r');
+      $cntTF=fread($tmpfile, 1024);
+      fclose($tmpfile);
+      $CNT=json_decode($cntTF);
+      foreach($CNT as $c){
+        foreach($list as $l){
+          if(str_contains($c, $l)) return "CI";
+        }
       }
+      return "OK";
     }
-    return "OK";
-  }
-  function MDFS_listLoad($op, $file){
-    if($op!=0){
+    function MDFS_listLoad($op, $file){
+      if($op!=0){
+        $flist=fopen($file, "r");
+        $fw=fread($flist,1024);
+        while(false!==$line=fgets($fw)){
+          $fcnt[]=$line;
+        }
+        fclose($flist);
+        return $fcnt;
+      }
       $flist=fopen($file, "r");
       $fw=fread($flist,1024);
       while(false!==$line=fgets($fw)){
@@ -32,16 +41,6 @@
       fclose($flist);
       return $fcnt;
     }
-    $flist=fopen($file, "r");
-    $fw=fread($flist,1024);
-    while(false!==$line=fgets($fw)){
-       $fcnt[]=$line;
-    }
-    fclose($flist);
-    return $fcnt;
   }
-  $lists=[
-    "basic"=>"MDFS/BCL/MDFS_basic_list.txt"
-  ];
   #Necesito borrar archivos tmp. Terminar lode la lista
 ?>
