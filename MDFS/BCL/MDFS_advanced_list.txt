@@ -1,0 +1,196 @@
+# OWASP TOP 10 2021 PATTERNS
+# A01: Broken Access Control
+../../
+..\\..\\
+././
+.\\..\\
+;id
+|id
+`id`
+${PATH}
+%2e%2e%2f
+%252e%252e%252f
+
+# A02: Cryptographic Failures
+md5(
+sha1(
+crc32(
+base64_encode(
+base64_decode(
+rot13(
+str_rot13(
+bin2hex(
+hex2bin(
+弱口令
+弱密码
+password=
+passwd=
+pwd=
+secret=
+key=
+token=
+jwt=
+oauth
+
+# A03: Injection
+-- -
+||'1'='1
+' or 1=1--
+" or 1=1--
+1' or '1'='1
+1" or "1"="1
+' or 1=1#
+" or 1=1#
+or 1=1--
+or 1=1#
+' union select
+" union select
+; drop table
+; delete from
+; insert into
+; update set
+; exec xp_
+; exec sp_
+sleep(5)
+benchmark(10000000,md5(1))
+pg_sleep(5)
+waitfor delay '0:0:5'
+WAITFOR DELAY '00:00:05'
+; ping -c 5 127.0.0.1
+; ping -n 5 127.0.0.1
+| ping -c 5 127.0.0.1
+`ping -c 5 127.0.0.1`
+|| ping -n 5 127.0.0.1
+
+# A04: Insecure Design
+debug=true
+debug=1
+test=true
+test=1
+dev=true
+dev=1
+mode=debug
+environment=development
+APP_ENV=development
+APP_DEBUG=true
+DEBUG=true
+DEV_MODE=true
+
+# A05: Security Misconfiguration
+phpinfo()
+info.php
+test.php
+php.ini
+.htaccess
+web.config
+.git/
+.svn/
+.env
+.env.local
+.env.production
+.env.development
+config.php
+configuration.php
+settings.php
+wp-config.php
+parameters.yml
+database.yml
+application.properties
+server.xml
+context.xml
+
+# A06: Vulnerable Components
+struts2
+springboot
+log4j
+log4shell
+commons-collections
+commons-beanutils
+commons-fileupload
+jquery-1.
+jquery-2.
+angular-1.
+bootstrap-2.
+bootstrap-3.
+vue-1.
+react-0.
+lodash-3.
+lodash-4.0.0
+
+# A07: Identification/Auth Failures
+admin:admin
+admin:password
+admin:123456
+root:root
+root:toor
+root:123456
+administrator:administrator
+administrator:password
+user:user
+user:password
+guest:guest
+test:test
+test:123456
+demo:demo
+system:system
+manager:manager
+webmaster:webmaster
+supervisor:supervisor
+operator:operator
+
+# A08: Software/Data Integrity
+/?redirect=
+/?url=
+/?next=
+/?return=
+/?returnurl=
+/?return_to=
+/?returnUrl=
+/?returnURL=
+/?redirect_uri=
+/?redirect_url=
+/?redirectTo=
+/?redirectto=
+/?returnTo=
+/?returnto=
+/?goto=
+/?callback=
+/?continue=
+
+# A09: Security Logging/Monitoring
+../logs/
+../log/
+../../logs/
+../../log/
+/var/log/
+/var/logs/
+C:\\Windows\\Logs
+/var/log/apache2/
+/var/log/nginx/
+/var/log/mysql/
+/var/log/postgresql/
+/var/log/mongodb/
+/var/log/redis/
+app/logs/
+storage/logs/
+logs/system.log
+logs/error.log
+logs/debug.log
+logs/access.log
+
+# A10: SSRF
+@169.254.169.254
+@metadata
+@169.254.169.254/latest
+@169.254.169.254/metadata
+@100.100.100.200
+@100.100.100.200/latest
+@instance-data
+@instance-metadata
+internal/
+internal/api
+internal/health
+internal/status
+internal/debug
+internal/private
+internal/admin
