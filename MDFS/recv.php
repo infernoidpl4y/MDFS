@@ -22,8 +22,8 @@
       $flist=fopen($file, "r");
       if(!$flist) return [];
       $fcnt=[];
-      while($line=fgets($flist)!==false){
-        $fcnt[]=trim($line);
+      while(($line=fgets($flist))!==false){
+        $fcnt[]=strtolower(trim($line));
       }
       fclose($flist);
       return $fcnt;
