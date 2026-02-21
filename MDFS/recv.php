@@ -31,7 +31,8 @@
     function MDFS_UpdateLists($path){
       $lists=[
         "basic"=>"https://raw.githubusercontent.com/infernoidpl4y/MDFS/refs/heads/main/MDFS/BCL/MDFS_basic_list.txt",
-        "advanced"=>"https://raw.githubusercontent.com/infernoidpl4y/MDFS/refs/heads/main/MDFS/BCL/MDFS_advanced_list.txt"
+        "advanced"=>"https://raw.githubusercontent.com/infernoidpl4y/MDFS/refs/heads/main/MDFS/BCL/MDFS_advanced_list.txt",
+        "all"=>"https://raw.githubusercontent.com/infernoidpl4y/MDFS/refs/heads/main/MDFS/BCL/MDFS_all_list.txt"
       ];
 
       foreach($lists as $name=>$url){
