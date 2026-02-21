@@ -3,7 +3,7 @@
   include("MDFS/recv.php");
   $MDFS= new MDFS_Scanner();
   $ip_c=$_SERVER["REMOTE_ADDR"];
-  $a=["1",2,"3"];
+  $a=["1",2,"3","<script>"];
   if($MDFS->MDFS_tmpScanner($a)=="CI"){
     echo "<span style='color: red'> [*]Block IP: $ip_c </span><br>";
   }else{

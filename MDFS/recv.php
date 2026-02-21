@@ -1,25 +1,20 @@
 <?php
-  if($_GET){
-    $getCNT=json_encode($_GET);
-    $fTMP=fopen("MDFS/TMP/tmp.json","w");
-    fwrite($fTMP, $getCNT);
-    fclose($fTMP);
-  }if($_POST){
-    $postCNT=json_encode($_POST);
-    $fTMP=fopen("MDFS/TMP/tmp.json","w");
-    fwrite($fTMP, $postCNT);
-    fclose($fTMP);
-  }
   class MDFS_Scanner{
     function MDFS_tmpScanner($list){
-      $tmpfile=fopen("MDFS/TMP/tmp.json", 'r');
-      $cntTF=fread($tmpfile, 1024);
-      fclose($tmpfile);
-      $CNT=json_decode($cntTF);
-      foreach($CNT as $c){
-        foreach($list as $l){
-          if(str_contains($c, $l)) return "CI";
-        }
+      if($_GET){
+        $CNT=($_GET);
+        foreach($CNT as $c){
+          foreach($list as $l){
+            if(str_contains(strtolower($c), $l)) return "CI";
+         }
+        } 
+      }if($_POST){
+        $CNT=($_POST);
+        foreach($CNT as $c){
+          foreach($list as $l){
+            if(str_contains(strtolower($c), $l)) return "CI";
+         }
+        }  
       }
       return "OK";
     }
