@@ -1,4 +1,3 @@
-# SQL INJECTION PATTERNS
 select.*from
 union.*select
 insert.*into
@@ -27,8 +26,6 @@ sleep.*(
 %27
 %22
 %3b
-
-# XSS (CROSS-SITE SCRIPTING) PATTERNS
 <script
 javascript:
 vbscript:
@@ -68,8 +65,6 @@ expression(
 ${7*7}
 [[$]]
 {{constructor}}
-
-# COMMAND INJECTION PATTERNS
 ;.*shutdown
 ;.*reboot
 ;.*rm
@@ -103,8 +98,6 @@ powershell
 mshta
 wscript
 cscript
-
-# PATH TRAVERSAL PATTERNS
 ../
 ..\\
 ..\\
@@ -125,8 +118,6 @@ glob://
 phar://
 zip://
 rar://
-
-# LDAP INJECTION PATTERNS
 *)(&
 *)(|(
 *)(uid=
@@ -134,8 +125,6 @@ rar://
 admin*
 *)(password=
 *)(pass=
-
-# XML INJECTION PATTERNS
 <!ENTITY
 <!DOCTYPE
 <?xml
@@ -148,8 +137,6 @@ expect://
 xxe://
 &xxe;
 &remote;
-
-# SSTI (SERVER SIDE TEMPLATE INJECTION) PATTERNS
 {{.*}}
 ${.*}
 #{.*}
@@ -164,8 +151,6 @@ ${7*7}
 ${class}
 ${env}
 ${request}
-
-# SSRF (SERVER SIDE REQUEST FORGERY) PATTERNS
 127.0.0.1
 localhost
 169.254.169.254
@@ -179,8 +164,6 @@ gopher://
 dict://
 ftp://
 tftp://
-
-# FILE UPLOAD BYPASS PATTERNS
 .php.
 .php5
 .phtml
@@ -213,8 +196,6 @@ tftp://
 *.exe
 %00
 \x00
-
-# NO-SQL INJECTION PATTERNS
 [$ne]
 [$gt]
 [$lt]
@@ -242,8 +223,6 @@ lte=
 regex=
 in=
 nin=
-
-# HTTP HEADER INJECTION PATTERNS
 %0d%0a
 %0a%0d
 %0a
@@ -259,8 +238,6 @@ x-remote-ip:
 x-remote-addr:
 x-client-ip:
 true-client-ip:
-
-# WORDPRESS SPECIFIC ATTACKS
 wp-config.php
 wp-content
 wp-includes
@@ -278,8 +255,6 @@ wp-trackback.php
 wp-mail.php
 wp-activate.php
 wp-comments-post.php
-
-# LARAVEL SPECIFIC
 .env
 .env.example
 artisan
@@ -292,8 +267,6 @@ package.json
 server.php
 _ide_helper.php
 .phpstorm.meta.php
-
-# LOG4J/LOG4SHELL
 ${jndi:ldap
 ${jndi:rmi
 ${jndi:ldaps
@@ -308,8 +281,6 @@ ${${lower:}
 ${${upper:}
 ${${date:}
 ${${::-j}
-
-# WEBSHELL DETECTION
 eval($_POST
 eval($_GET
 eval($_REQUEST
@@ -330,8 +301,6 @@ gzinflate.*$_POST
 str_rot13.*$_POST
 edoced_46esab
 erssiD_46esab
-
-# GENERIC MALICIOUS PATTERNS
 ../../
 ..\\..\\
 adminer.php
