@@ -1,6 +1,6 @@
 <?php
   #Example how use MDFS
-  include("MDFS/recv.php");
+  include("MDFS/mdfs.php");
   $MDFS= new MDFS();
   #Update Example
   if(date("w")==1){
